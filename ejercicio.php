@@ -50,7 +50,7 @@
         <form name="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
             Nombre Alumno: <input type="text" name="nombre" value="<?php
             if(isset($errores['nombre'])){
-                echo $errores['nombre'];
+                echo "\"";
             } else {
                 echo $nombre;
             }
@@ -60,7 +60,7 @@
 
             Apellido Alumno: <input type="text" name="apellido" value="<?php
             if(isset($errores['apellido'])){
-                echo $errores['apellido'];
+                echo "\"";
             } else {
                 echo $apellido;
             }
@@ -71,7 +71,7 @@
 
             Correo: <input type="text" name="correo" value="<?php
             if(isset($errores['correo'])){
-                echo $errores['correo'];
+                echo "\"";
             } else {
                 echo $correo;
             }
@@ -82,7 +82,7 @@
 
             DNI: <input type="text" name="dni" value="<?php
             if(isset($errores['dni'])){
-                echo $errores['dni'];
+                echo "\"";
             } else {
                 echo $dni;
             }
@@ -92,7 +92,7 @@
             <br>
             Fecha: <input type="date" name="fecha" value="<?php
             if(isset($errores['fecha'])){
-                $errores['fecha'];
+                echo "\"";
             } else {
                 echo $fecha;
             }
