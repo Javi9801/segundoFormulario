@@ -1,3 +1,7 @@
+<?php
+require_once('entidades/alumno.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
         $correo = "";
         $dni = "";
         $fecha = "";
-
+        $alumno;
 
 
         $modulos = [];
@@ -24,13 +28,14 @@
         if(isset($_POST['enviar'])){
 
             $errores = validar($_POST['nombre'], $_POST['apellido'], $_POST['dni'], $_POST['correo'], $_POST['fecha']);
-
             
                 $nombre = $_POST['nombre'];
                 $apellido = $_POST['apellido'];
                 $correo = $_POST['correo'];
                 $dni = $_POST['dni'];
                 $fecha = $_POST['fecha'];
+
+                $alumno = new Alumno($nombre, $apellido, $correo, $dni, $fecha);
 
                 if(isset($_POST['modulos'])==false){
 
@@ -40,9 +45,11 @@
                 } else {
                     $modulos = $_POST['modulos'];
                 }
-            
-    
-
+                
+                $alumno->muestra(); 
+                
+        
+                          
         }
             
     ?>
@@ -121,10 +128,10 @@
                Diseño de interfaces web<br />
                <br />
 
+
         <input type="submit" value="Enviar" name="enviar"/>
 
-
-
+       
 </body>
 </html>
 
